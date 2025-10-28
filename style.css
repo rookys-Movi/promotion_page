@@ -1,0 +1,46 @@
+/* --- Global Styles & New Color Palette --- */
+:root {
+    --color-green: #00a29a;
+    --color-yellow: #f5dc3d;
+    --color-blue: #6ac7e9; /* Accent color */
+    --color-navy: #002835; /* Text color, accent color */
+    --color-white: #ffffff;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--color-navy);
+}
+
+/* --- Feature Section Icon --- */
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+/* --- Campaign Steps --- */
+/* .campaign-steps { */
+    /* Optional: Add connecting lines between steps if needed */
+/* } */
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    color: var(--color-green);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
