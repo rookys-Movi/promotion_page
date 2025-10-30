@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ガクチカワーク | 友達紹介キャンペーン</title>
-    <link rel="icon" type="image/png" href="images/logo/rookyfavicon.png"> <!-- Adjust path as needed -->
-
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Google Fonts: Noto Sans JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,243 +18,288 @@
 
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Custom Tailwind Config & Colors -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'custom-green': '#00a29a',
-              'custom-yellow': '#f5dc3d',
-              'custom-blue': '#6ac7e9', // Accent color
-              'custom-navy': '#002835', // Text color, accent color
-              'custom-white': '#ffffff',
-            }
-          }
-        }
-      }
-    </script>
 </head>
-<body class="bg-white text-custom-navy">
+<body class="bg-white">
 
-    <!-- Header -->
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-             <!-- Placeholder for Logo -->
-            <a href="#" class="text-2xl font-bold text-custom-green">ガクチカワーク by Rooky</a>
-            <a href="#register" class="bg-custom-yellow text-custom-navy font-bold py-2 px-6 rounded-full hover:opacity-90 transition-opacity">
-                今すぐ無料で登録
-            </a>
+    <!-- 1. Top Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-green-600">
+                ガクチカワーク by Rooky
+            </div>
+            <!-- Navigation & CTA -->
+            <div class="flex items-center space-x-4">
+                <!-- <a href="#features" class="text-gray-600 hover:text-black hidden md:block">特徴</a>
+                <a href="#campaign" class="text-gray-600 hover:text-black hidden md:block">キャンペーン</a> -->
+                <!-- Yellow Sign Up Button (Rule 1) -->
+                <a href="#form" class="bg-yellow-400 text-black font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-colors">
+                    今すぐ無料で登録
+                </a>
+            </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="py-20 md:py-28 text-center bg-custom-green text-custom-white">
-            <div class="container mx-auto px-6">
+
+        <!-- 2. Hero Section -->
+        <section class="bg-green-600 text-white py-16 md:py-20">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Centered Title and Subtext -->
                 <h1 class="text-4xl md:text-6xl font-black leading-tight" data-aos="fade-up">
                     「お見合い型」の就活は、<br>もうやめよう。
                 </h1>
-                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto font-medium" data-aos="fade-up" data-aos-delay="100">
-                    あなたの頑張り、本当の能力をデータで評価する新時代へ。<br>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto font-light" data-aos="fade-up" data-aos-delay="100">
+                    あなたの頑張り、本当の能力をデータで評価する新時代へ。
                     インターン・バイトの「勤怠、日報、評価、推薦」を就活の最強の武器にする、インターンシップ特化型採用マッチングサービスです。
                 </p>
-                <div class="mt-10" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#register" class="bg-custom-yellow text-custom-navy font-bold text-lg py-3 px-10 rounded-full hover:opacity-90 transition-transform hover:scale-105 shadow-lg inline-block">
-                        【登録無料・3分で完了】 あなたの就活をアップデートする!
-                    </a>
+                <!-- Yellow Sign Up Button (Rule 2) -->
+                <a href="#form" class="mt-10 bg-yellow-400 text-black font-bold px-8 py-3 rounded-lg hover:bg-yellow-500 transition-colors inline-block text-lg" data-aos="fade-up" data-aos-delay="200">
+                    【登録無料・3分で完了】 あなたの就活をアップデートする!
+                </a>
+                
+                <!-- Image Placeholder Below Text (Rule 2) -->
+                <div class="mt-12 md:mt-16 bg-gray-300 h-64 w-full rounded-xl flex items-center justify-center text-gray-600" data-aos="zoom-in" data-aos-delay="300">
+                    Image Placeholder
                 </div>
             </div>
         </section>
 
-        <!-- Problem Section -->
-        <section class="py-20">
-            <div class="container mx-auto px-6 text-center max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-custom-navy mb-4" data-aos="fade-up">今の就活が抱える<br>"不都合な真実"</h2>
-                <p class="text-lg text-gray-700 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                    現在の就職活動では、短期間の面接で「本当の力」が見極められない、書面でのスペック重視 (学歴・スキル)になりがち、就活ルールや形式に縛られがち、といった課題があります。
-                </p>
-                <p class="mt-4 text-lg text-gray-700 leading-relaxed font-semibold" data-aos="fade-up" data-aos-delay="200">
-                    その結果、ミスマッチによる「早期離職」や企業と学生の「本音の不一致」が多く発生しています。
-                </p>
-                <p class="mt-6 text-xl font-bold text-custom-green" data-aos="fade-up" data-aos-delay="300">
-                    ガクチカワークは、このミスマッチをゼロにします。
-                </p>
-            </div>
-        </section>
-
-        <!-- Comparison Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-center items-stretch gap-8 max-w-5xl">
-                <!-- Traditional -->
-                <div class="md:w-1/2 bg-white p-8 rounded-lg border border-gray-200 text-center" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold text-gray-500 mb-4">お見合い型 (従来)</h3>
-                    <ul class="space-y-2 text-lg text-gray-700">
-                        <li><span class="text-red-500 mr-2">&times;</span> 書類上のスペック重視</li>
-                        <li><span class="text-red-500 mr-2">&times;</span> 短期間のアプローチ</li>
-                        <li><span class="text-red-500 mr-2">&times;</span> ミスマッチが発生しやすい</li>
-                    </ul>
-                </div>
-                <!-- Gakuchika -->
-                <div class="md:w-1/2 bg-custom-green text-white p-8 rounded-lg text-center" data-aos="fade-left">
-                     <h3 class="text-2xl font-bold text-custom-yellow mb-4">恋愛型 (ガクチカワーク)</h3>
-                    <ul class="space-y-2 text-lg">
-                        <li><span class="text-custom-yellow mr-2">&#10004;</span> 相互理解と相性を重視</li>
-                        <li><span class="text-custom-yellow mr-2">&#10004;</span> 継続的な接点・交流</li>
-                        <li><span class="text-custom-yellow mr-2">&#10004;</span> ミスマッチをゼロに</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-custom-navy" data-aos="fade-up">ガクチカワークが提供する<br>3つの「就活アップデート」</h2>
-                    <p class="mt-4 text-lg text-gray-700" data-aos="fade-up" data-aos-delay="100">
-                        「ガクチカワーク」は、学生の頑張りを可視化できるサービスです。
+        <!-- 3. Problem Section -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text (Rule 3) -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">今の就活が抱える<br>"不都合な真実"</h2>
+                    <p class="mt-6 text-lg text-gray-700 leading-relaxed">
+                        現在の就職活動では、短期間の面接で「本当の力」が見極められない、書面でのスペック重視 (学歴・スキル)になりがち、就活ルールや形式に縛られがち、といった課題があります。
+                    </p>
+                    <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+                        その結果、ミスマッチによる「早期離職」や企業と学生の「本音の不一致」が多く発生しています。<br><strong class="text-green-600">ガクチカワークは、このミスマッチをゼロにします。</strong>
                     </p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8 text-center">
-                    <!-- Feature 1: Offers -->
-                    <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
-                        <div class="feature-icon bg-custom-green text-custom-yellow">1</div>
-                        <h3 class="text-xl font-bold text-custom-navy mt-4 mb-2">企業からの「熱いオファー」が届く!</h3>
-                        <p class="text-gray-700">インターンシップ後に評価の高い学生に直接アプローチできる「オファー機能」。面接だけでは見えなかった才能や興味をデータで発見し、企業は未来の幹部候補を見つけ出します。</p>
-                    </div>
-                    <!-- Feature 2: Recommendations -->
-                    <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm" data-aos="fade-up" data-aos-delay="300">
-                        <div class="feature-icon bg-custom-green text-custom-yellow">2</div>
-                        <h3 class="text-xl font-bold text-custom-navy mt-4 mb-2">信頼できる「推薦」が履歴書代わりになる!</h3>
-                        <p class="text-gray-700">先輩・OB/OG、教授、キャリアセンター、バイト先などから「推薦」を受けられます。企業側も採用の判断材料として活用します。</p>
-                    </div>
-                    <!-- Feature 3: Visualization Tool -->
-                    <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm" data-aos="fade-up" data-aos-delay="400">
-                         <div class="feature-icon bg-custom-green text-custom-yellow">3</div>
-                        <h3 class="text-xl font-bold text-custom-navy mt-4 mb-2">自己成長を最大化する「見える化」ツール!</h3>
-                        <p class="text-gray-700">インターン期間中の「勤怠」「日報」「評価」「推薦」をすべてデータ化し、潜在能力を可視化。企業からのFB共有も可能です。</p>
-                    </div>
+                <!-- Right: Image Placeholder (Rule 3) -->
+                <div class="bg-gray-300 h-64 md:h-96 w-full rounded-2xl flex items-center justify-center text-gray-600" data-aos="fade-left" data-aos-delay="100">
+                    Image Placeholder (A person standing)
                 </div>
             </div>
         </section>
 
-        <!-- Campaign Section -->
-        <section class="py-20 bg-gradient-to-br from-custom-yellow to-yellow-300 text-custom-navy">
+        <!-- 4. Comparison Section -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                <!-- Left Container (Rule 4) -->
+                <div class="bg-gray-200 p-8 rounded-2xl w-full md:w-5/12" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold text-center text-gray-700 mb-4">お見合い型 (従来)</h3>
+                    <ul class="space-y-2 text-lg text-gray-600">
+                        <li class="flex items-center"><span class="text-red-500 mr-2 text-2xl">&times;</span> 書類上のスペック重視</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2 text-2xl">&times;</span> 短期間のアプローチ</li>
+                        <li class="flex items-center"><span class="text-red-500 mr-2 text-2xl">&times;</span> ミスマッチが発生しやすい</li>
+                    </ul>
+                </div>
+                
+                <!-- Arrow Icon (Rule 4) -->
+                <div class="text-yellow-400" data-aos="zoom-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 md:w-16 md:h-16">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </div>
+
+                <!-- Right Container (Rule 4) -->
+                <div class="bg-yellow-400 p-8 rounded-2xl w-full md:w-5/12" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold text-center text-black mb-4">恋愛型 (ガクチカワーク)</h3>
+                    <ul class="space-y-2 text-lg text-gray-900">
+                        <li class="flex items-center"><span class="text-green-700 mr-2 text-2xl">&#10004;</span> 相互理解と相性を重視</li>
+                        <li class="flex items-center"><span class="text-green-700 mr-2 text-2xl">&#10004;</span> 継続的な接点・交流</li>
+                        <li class="flex items-center"><span class="text-green-700 mr-2 text-2xl">&#10004;</span> ミスマッチをゼロに</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Features Section -->
+        <section id="features" class="bg-white py-16 md:py-24">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <p class="text-lg font-bold text-custom-green mb-2">【期間限定!】</p>
-                    <h2 class="text-3xl md:text-4xl font-black">友達紹介キャンペーンでW特典GET!</h2>
-                    <p class="mt-4 text-xl font-semibold">友達と最強の就活コミュニティを作ろう!</p>
+                <!-- Top Yellow Line (Rule 5) -->
+                <hr class="hr-yellow">
+                
+                <div class="text-center my-12 md:my-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">ガクチカワークが提供する<br>3つの「就活アップデート」</h2>
+                    <p class="mt-4 text-lg text-gray-700">「ガクチカワーク」は、学生の頑張りを可視化できるサービスです。</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
-                    <!-- Referrer Benefit -->
-                    <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-right">
-                        <h3 class="text-xl font-bold text-custom-green mb-3 text-center">紹介者(あなた)への特典</h3>
-                        <p class="text-center text-lg">以下のどちらかを選択！</p>
-                        <ul class="mt-4 space-y-2 text-center text-lg">
-                            <li><span class="font-bold">Amazonギフト券 1,000円分</span></li>
-                            <li>または</li>
-                            <li><span class="font-bold">プロのキャリア面談無料券 (1回分)</span></li>
-                        </ul>
-                    </div>
-                    <!-- Referred Friend Benefit -->
-                    <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-left">
-                        <h3 class="text-xl font-bold text-custom-green mb-3 text-center">被紹介者(友達)への特典</h3>
-                        <p class="text-center text-lg">初めてのインターンシップ参加で…</p>
-                         <p class="mt-4 text-center text-2xl font-bold">Amazonギフト券 1,000円分プレゼント!</p>
-                    </div>
-                </div>
-
-                <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">特典獲得のステップ</h3>
-                <div class="grid md:grid-cols-3 gap-8 text-center relative campaign-steps">
-                    <!-- Step 1 -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
                     <div data-aos="fade-up" data-aos-delay="100">
-                        <div class="step-number">1</div>
-                        <p class="mt-4 text-lg font-medium">ログイン後、「推薦機能」ページから専用リンクをコピー。</p>
+                        <div class="bg-gray-300 h-48 w-full rounded-2xl flex items-center justify-center text-gray-600">Image Placeholder</div>
+                        <h3 class="mt-4 text-xl font-bold">企業からの「熱いオファー」が届く!</h3>
+                        <p class="mt-2 text-gray-700">インターンシップ後に評価の高い学生に直接アプローチできる「オファー機能」。面接だけでは見えなかった才能や興味をデータで発見します。</p>
                     </div>
-                    <!-- Step 2 -->
+                    <!-- Feature 2 -->
                     <div data-aos="fade-up" data-aos-delay="200">
-                        <div class="step-number">2</div>
-                        <p class="mt-4 text-lg font-medium">LINEやSNSで友達に「この就活サービス、ガチでヤバい」とシェア!</p>
+                        <div class="bg-gray-300 h-48 w-full rounded-2xl flex items-center justify-center text-gray-600">Image Placeholder</div>
+                        <h3 class="mt-4 text-xl font-bold">信頼できる「推薦」が履歴書代わりになる!</h3>
+                        <p class="mt-2 text-gray-700">先輩・OB/OG、教授、キャリアセンター、バイト先などから「推薦」を受けられます。企業側も採用の判断材料として活用します。</p>
                     </div>
-                    <!-- Step 3 -->
+                    <!-- Feature 3 -->
                     <div data-aos="fade-up" data-aos-delay="300">
-                         <div class="step-number">3</div>
-                        <p class="mt-4 text-lg font-medium">友達が登録 & 求人応募 & 初回チャット完了で、あなたと友達に特典が付与！</p>
+                        <div class="bg-gray-300 h-48 w-full rounded-2xl flex items-center justify-center text-gray-600">Image Placeholder</div>
+                        <h3 class="mt-4 text-xl font-bold">自己成長を最大化する「見える化」ツール!</h3>
+                        <p class="mt-2 text-gray-700">インターン期間中の「勤怠」「日報」「評価」「推薦」をすべてデータ化し、潜在能力を可視化。企業からのFB共有も可能です。</p>
                     </div>
                 </div>
+                
+                <!-- Bottom Yellow Line (Rule 5) -->
+                <hr class="hr-yellow mt-16 md:mt-20">
+            </div>
+        </section>
 
-                <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
-                     <p class="text-xl font-semibold mb-6">
-                        就活も、特典も、友達とシェア!<br>
-                        最高の就活ツールを大切な友達に教えてあげて、あなたも友達も特典をもらう<br>
-                        最強のwin-winのチャンスです!
-                     </p>
-                     <a href="#register" class="bg-custom-green text-white font-bold text-lg py-3 px-10 rounded-full hover:opacity-90 transition-transform hover:scale-105 shadow-lg inline-block">
-                        今すぐ登録して紹介URLをGETする!
-                    </a>
+        <!-- 6. Campaign Section -->
+        <section id="campaign" class="bg-yellow-400 py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <!-- White Content Container (Rule 6) -->
+                <div class="bg-white rounded-2xl p-8 md:p-16 shadow-lg">
+                    
+                    <!-- Campaign Intro HTML (Pasted) -->
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <p class="text-lg font-bold text-green-600 mb-2">【期間限定!】</p>
+                        <h2 class="text-3xl md:text-4xl font-black text-gray-900">友達紹介キャンペーンでW特典GET!</h2>
+                        <p class="mt-4 text-xl font-semibold text-gray-800">友達と最強の就活コミュニティを作ろう!</p>
+                    </div>
+
+                    <!-- Two-column Layout (Rule 6) -->
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        <!-- Left: Image Placeholder -->
+                        <div class="bg-gray-300 h-64 w-full rounded-2xl flex items-center justify-center text-gray-600" data-aos="fade-right" data-aos-delay="100">
+                            Image Placeholder
+                        </div>
+                        <!-- Right: Benefit Boxes -->
+                        <div class="space-y-4" data-aos="fade-left" data-aos-delay="200">
+                            <!-- Benefit 1 (White Box) -->
+                            <div class="bg-white rounded-lg p-6 shadow-md border">
+                                <h3 class="text-xl font-bold text-green-600 mb-2">紹介者(あなた)への特典</h3>
+                                <p class="text-gray-700">Amazonギフト券 <strong>1,000円分</strong> または プロのキャリア面談無料券 (1回分)のどちらかを選択!</p>
+                            </div>
+                            <!-- Benefit 2 (White Box) -->
+                            <div class="bg-white rounded-lg p-6 shadow-md border">
+                                <h3 class="text-xl font-bold text-green-600 mb-2">被紹介者(友達)への特典</h3>
+                                <p class="text-gray-700">初めてのインターンシップ参加で <strong>Amazonギフト券 1,000円</strong>をプレゼント!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Trust Section -->
-        <section class="py-20 bg-gray-50">
+        <!-- 7. Steps to Get Rewards Section -->
+        <section class="bg-white py-16 md:py-24">
             <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold text-custom-navy mb-12" data-aos="fade-up">安心のバックアップと<br>信頼できるパートナーシップ</h2>
+                <h2 class="text-3xl md:text-4xl font-bold" data-aos="fade-up">特典獲得のステップ</h2>
+                
+                <!-- Steps Layout (Rule 7) -->
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 my-12" data-aos="fade-up" data-aos-delay="100">
+                    
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center p-4">
+                        <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">1</div>
+                        <p class="mt-4 font-semibold">ログイン後、「推薦機能」ページから<br>専用リンクをコピー。</p>
+                    </div>
+                    
+                    <!-- Arrow 1 -->
+                    <div class="text-yellow-400 transform rotate-90 md:rotate-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center p-4">
+                        <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">2</div>
+                        <p class="mt-4 font-semibold">LINEやSNSで友達に<br>「この就活サービス、ガチでヤバい」とシェア!</p>
+                    </div>
+                    
+                    <!-- Arrow 2 -->
+                    <div class="text-yellow-400 transform rotate-90 md:rotate-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center p-4">
+                        <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl font-bold">3</div>
+                        <p class="mt-4 font-semibold">友達が登録し、求人に応募、<br><strong class="text-red-600">企業との初回チャット完了</strong>で特典付与！</p>
+                    </div>
+
+                </div>
+
+                <!-- Green Sign Up Button (Rule 7) -->
+                <a href="#form" class="bg-green-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-green-700 transition-colors inline-block text-lg" data-aos="fade-up" data-aos-delay="200">
+                    今すぐ登録して紹介URLをGETする!
+                </a>
+
+                <!-- Yellow Bottom Line (Rule 7) -->
+                <hr class="hr-yellow mt-16 md:mt-20">
+            </div>
+        </section>
+
+        <!-- 8. Trust Section -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12" data-aos="fade-up">安心のバックアップと<br>信頼できるパートナーシップ</h2>
                  <div class="grid md:grid-cols-3 gap-12 items-start">
                      <!-- University Collaboration -->
                     <div data-aos="fade-up" data-aos-delay="100">
-                        <div class="h-24 mb-4 flex items-center justify-center text-gray-400 text-xl font-bold">[大学ロゴ/イラスト]</div>
-                        <h3 class="text-xl font-bold text-custom-navy mb-2">大学連携</h3>
+                        <div class="bg-gray-300 h-24 w-full rounded-xl flex items-center justify-center text-gray-600 mb-4">Partner Logo/Image</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">大学連携</h3>
                         <p class="text-gray-700">全国 350 大学のキャリアセンターへ情報告知が実現しています。</p>
                     </div>
                      <!-- Dormy Collaboration -->
                     <div data-aos="fade-up" data-aos-delay="200">
-                        <div class="h-24 mb-4 flex items-center justify-center text-gray-400 text-xl font-bold">[Dormyロゴ]</div>
-                        <h3 class="text-xl font-bold text-custom-navy mb-2">提携実績</h3>
+                        <div class="bg-gray-300 h-24 w-full rounded-xl flex items-center justify-center text-gray-600 mb-4">Partner Logo/Image</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">提携実績</h3>
                         <p class="text-gray-700">全国2.4万人が利用する学生寮「Dormy」と提携し、入居者向けの就業支援サポートを実施しています。</p>
                     </div>
                      <!-- Internship Day -->
                     <div data-aos="fade-up" data-aos-delay="300">
-                        <div class="h-24 mb-4 flex items-center justify-center text-gray-400 text-xl font-bold">[記念日ロゴ/イラスト]</div>
-                        <h3 class="text-xl font-bold text-custom-navy mb-2">熱意の証明</h3>
+                        <div class="bg-gray-300 h-24 w-full rounded-xl flex items-center justify-center text-gray-600 mb-4">Partner Logo/Image</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">熱意の証明</h3>
                         <p class="text-gray-700">日本記念日協会に申請し、1月10日を「インターンシップの日」として制定・登録していただきました。</p>
                     </div>
                  </div>
             </div>
         </section>
 
-         <!-- Final CTA -->
-        <section id="register" class="py-20 bg-custom-green text-custom-white">
+        <!-- Final CTA (Form Anchor) -->
+        <section id="form" class="bg-green-600 py-16 md:py-20 text-white">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-black mb-4" data-aos="fade-up">あなたの未来のキャリアを<br>「ガクチカワーク」で創る</h2>
                 <p class="text-xl mb-2" data-aos="fade-up" data-aos-delay="100">対象: 専門/短大/大学/大学院含むすべての学生</p>
-                <p class="text-xl mb-8" data-aos="fade-up" data-aos-delay="200">費用: サービス利用は<span class="font-bold text-custom-yellow">無料</span>です。</p>
-                <a href="#" class="bg-custom-yellow text-custom-navy font-bold text-lg py-3 px-10 rounded-full hover:opacity-90 transition-transform hover:scale-105 shadow-lg inline-block" data-aos="fade-up" data-aos-delay="300">
+                <p class="text-xl mb-8" data-aos="fade-up" data-aos-delay="200">費用: サービス利用は<span class="font-bold text-yellow-400">無料</span>です。</p>
+                <!-- Green Sign Up Button (Rule 7) -->
+                <a href="#" class="bg-green-700 text-white font-bold text-lg py-3 px-10 rounded-lg hover:bg-green-800 transition-colors shadow-lg inline-block border border-green-500" data-aos="fade-up" data-aos-delay="300">
                     【登録はこちら!】無料・3分で完了
                 </a>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-custom-navy text-white">
+    <footer class="bg-white border-t border-gray-200">
         <div class="container mx-auto px-6 py-8 text-center">
-             <!-- Placeholder for Logo -->
-            <p class="font-bold text-lg mb-4">RookyWorks, Inc.</p>
-            <div class="text-sm text-gray-400">
-                <a href="#" class="hover:text-custom-blue transition mx-2">利用規約</a> |
-                <a href="#" class="hover:text-custom-blue transition mx-2">プライバシーポリシー</a>
+            <p class="font-bold text-lg mb-4 text-gray-800">RookyWorks, Inc.</p>
+            <div class="text-sm text-gray-500">
+                <a href="#" class="hover:text-black transition mx-2">利用規約</a> |
+                <a href="#" class="hover:text-black transition mx-2">プライバシーポリシー</a>
             </div>
-            <small class="block mt-4 text-gray-500">&copy; 2025 RookyWorks, Inc.</small>
+            <small class="block mt-4 text-gray-400">&copy; 2025 RookyWorks, Inc.</small>
         </div>
     </footer>
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <!-- Custom Script -->
     <script src="script.js"></script>
 </body>

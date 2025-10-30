@@ -1,46 +1,63 @@
-/* --- Global Styles & New Color Palette --- */
-:root {
-    --color-green: #00a29a;
-    --color-yellow: #f5dc3d;
-    --color-blue: #6ac7e9; /* Accent color */
-    --color-navy: #002835; /* Text color, accent color */
-    --color-white: #ffffff;
-}
-
+/* 1. Global Font and Base Styling */
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    color: var(--color-navy);
+    color: #1f2937; /* text-gray-900 */
+    overflow-x: hidden; /* Prevent horizontal scroll from AOS animations */
 }
 
-/* --- Feature Section Icon --- */
-.feature-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
+:root {
+    /* Brand Colors */
+    --color-green-600: #1ace95;
+    --color-green-700: #1ace95;
+    --color-yellow-400: #facc15;
+    --color-yellow-500: #eab308;
+
+    /* Neutral Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
 }
 
-/* --- Campaign Steps --- */
-/* .campaign-steps { */
-    /* Optional: Add connecting lines between steps if needed */
-/* } */
+/* 1.2 Background Utility Classes */
+.bg-brand-green { background-color: var(--color-green-600); }
+.bg-brand-green-dark { background-color: var(--color-green-700); }
+.bg-brand-yellow { background-color: var(--color-yellow-400); }
+.bg-brand-yellow-dark { background-color: var(--color-yellow-500); }
+.bg-brand-white { background-color: var(--color-white); }
+.bg-brand-gray { background-color: var(--color-gray-300); }
 
-.step-number {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: var(--color-white);
-    color: var(--color-green);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: 900;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* 1.3 Map Tailwind background utilities to variables for global control */
+.bg-green-600 { background-color: var(--color-green-600) !important; }
+.bg-green-700 { background-color: var(--color-green-700) !important; }
+.bg-yellow-400 { background-color: var(--color-yellow-400) !important; }
+.bg-yellow-500 { background-color: var(--color-yellow-500) !important; }
+
+/* 2. Custom Yellow Horizontal Line */
+.hr-yellow {
+    height: 12px;
+    background-color: var(--color-yellow-400);
+    border: none;
+    /* Make the line full-bleed to the viewport edges even inside containers */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+/* 3. FAQ Accordion Styles */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Adjust as needed */
+    transition: max-height 0.4s ease-in;
+}
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+.faq-icon {
+    transition: transform 0.3s ease-in-out;
 }
 

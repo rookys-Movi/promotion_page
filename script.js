@@ -9,35 +9,40 @@ AOS.init({
 function scrollToId(id) {
     const element = document.getElementById(id);
     if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" }); // Scrolls to the top of the element
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 }
 
 // --- Event Listeners ---
 document.addEventListener('DOMContentLoaded', function () {
-
+    
     // --- Smooth Scroll for internal anchors ---
     document.addEventListener('click', function (event) {
-        // Find the closest anchor link navigating internally
         const anchor = event.target.closest('a[href^="#"]');
-        if (!anchor) return; // Exit if it's not an internal anchor
-
+        if (!anchor) return;
+        
         const hash = anchor.getAttribute('href');
-        // Ensure it's not just "#"
-        if (!hash || hash === '#') return; 
+        if (!hash || hash === '#') return;
 
-        const id = hash.slice(1); // Get the ID without the '#'
-        if (!id) return; // Exit if no ID is found
+        const id = hash.slice(1);
+        if (!id) return;
 
-        // Check if the target element exists
         const targetElement = document.getElementById(id);
         if (targetElement) {
-            event.preventDefault(); // Prevent default jump
-            scrollToId(id); // Scroll smoothly
+            event.preventDefault();
+            scrollToId(id);
         }
-        // If the element doesn't exist, allow the default browser behavior (might navigate away or do nothing)
     });
 
-    // Note: FAQ and Form submission logic are removed as they are not needed for this page.
+    // --- FAQ Accordion Logic ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const icon = item.querySelector('.faq-icon');
+        
+        question.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
 });
 
