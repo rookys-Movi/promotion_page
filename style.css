@@ -1,16 +1,28 @@
+/* 0. Webfont: コーポレート・ロゴ ver2 */
+@font-face {
+    font-family: 'Corporate-Logo ver2';
+    src: local('コーポレート・ロゴ ver2'), local('Corporate-Logo ver2'),
+         url('fonts/Corporate-Logo-ver2.woff2') format('woff2'),
+         url('fonts/Corporate-Logo-ver2.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* 1. Global Font and Base Styling */
 body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Corporate-Logo ver2', 'Noto Sans JP', sans-serif;
     color: #1f2937; /* text-gray-900 */
     overflow-x: hidden; /* Prevent horizontal scroll from AOS animations */
 }
 
 :root {
     /* Brand Colors */
-    --color-green-600: #1ace95;
-    --color-green-700: #1ace95;
-    --color-yellow-400: #facc15;
-    --color-yellow-500: #eab308;
+    --color-green-600: #00a29a;
+    --color-green-700: #00a29a;
+    --color-yellow-400:  #f5dc3d;
+    --color-yellow-500:  #f5dc3d;
+    --color-red-600: #dc2626;
 
     /* Neutral Colors */
     --color-white: #ffffff;
@@ -26,6 +38,9 @@ body {
 .bg-brand-yellow-dark { background-color: var(--color-yellow-500); }
 .bg-brand-white { background-color: var(--color-white); }
 .bg-brand-gray { background-color: var(--color-gray-300); }
+
+/* Text Utility */
+.text-custom-red { color: var(--color-red-600) !important; }
 
 /* 1.3 Map Tailwind background utilities to variables for global control */
 .bg-green-600 { background-color: var(--color-green-600) !important; }
@@ -59,5 +74,14 @@ body {
 }
 .faq-icon {
     transition: transform 0.3s ease-in-out;
+}
+
+.triple-chevron-right {
+    font-size: 32px;
+    color: var(--color-green-600);
+}
+.triple-chevron-right-step2 {
+    font-size: 32px;
+    color: var(--color-yellow-400);
 }
 
