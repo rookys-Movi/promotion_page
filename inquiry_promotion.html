@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガクチカワーク | 無料学生登録</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'custom-green': '#00a29a',
+              'custom-yellow': '#f5dc3d',
+              'custom-blue': '#6ac7e9',
+              'custom-navy': '#002835',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+        body {
+            /* ベースのフォントファミリーを設定 */
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            /* 基本の背景色は白（ルールで指定） */
+            background-color: #ffffff;
+        }
+        /* カスタムアラート（モーダル）のスタイル */
+        .custom-alert {
+            position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff; border: 1px solid #f5dc3d; /* 黄色い枠線 */
+            border-radius: 0.75rem; /* rounded-2xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem; z-index: 1000; text-align: center; max-width: 90%;
+        }
+        .custom-alert-overlay {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5); z-index: 999;
+        }
+        .custom-alert-button {
+            background-color: #f5dc3d; /* 黄色いボタン */
+            color: #002835; /* 紺色のテキスト */
+            font-weight: 600;
+            padding: 0.5rem 1rem; border-radius: 0.375rem;
+            cursor: pointer; margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .custom-alert-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col items-center py-8 px-4">
+
+    <!-- カスタムアラート（エラー表示用） -->
+    <div id="customAlert" class="hidden custom-alert">
+        <p id="customAlertMessage" class="text-lg font-semibold text-gray-800"></p>
+        <button id="customAlertClose" class="custom-alert-button">OK</button>
+    </div>
+    <div id="customAlertOverlay" class="hidden custom-alert-overlay"></div>
+
+    <!-- ヘッダー -->
+    <header class="w-full max-w-4xl mx-auto px-4 mb-6 flex items-center justify-center">
+        <!-- ロゴのプレースホルダー -->
+        <a href="index.html" class="text-3xl font-bold text-custom-green">
+            ガクチカワーク by Rooky
+        </a>
+    </header>
+
+    <!-- イントロダクションセクション -->
+    <section class="w-full max-w-4xl bg-white shadow-lg rounded-2xl border border-gray-100 p-8 mb-8 text-center">
+        <h1 class="text-3xl font-bold text-custom-navy mb-4">ガクチカワークへようこそ！</h1>
+        <div class="text-left max-w-2xl mx-auto">
+            <p class="text-gray-700 mb-4">
+                ご登録ありがとうございます！
+                あなたのインターンやアルバイトでの「頑張り」を可視化し、就活の「最強の武器」に変えましょう。
+            </p>
+            <p class="text-gray-700 mb-4">
+                以下のフォームに必要事項を入力して、あなたの就活を今すぐアップデートしてください。
+            </p>
+        </div>
+    </section>
+
+    <!-- 登録フォームセクション -->
+    <section class="w-full max-w-4xl bg-white shadow-lg rounded-2xl border border-gray-100 p-8 mb-8">
+        <h2 class="text-2xl font-semibold text-custom-green mb-6 text-center">無料登録フォーム</h2>
+        <form id="registrationForm" class="space-y-4">
+            
+            <!-- 氏名 -->
+            <div>
+                <label for="fullName" class="block text-sm font-medium text-gray-700">氏名<span class="text-red-500">*</span></label>
+                <input type="text" name="fullName" id="fullName" required placeholder="山田 太郎" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-custom-yellow focus:ring-custom-yellow sm:text-sm">
+            </div>
+            
+            <!-- フリガナ -->
+            <div>
+                <label for="furigana" class="block text-sm font-medium text-gray-700">フリガナ<span class="text-red-500">*</span></label>
+                <input type="text" name="furigana" id="furigana" required placeholder="ヤマダ タロウ" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-custom-yellow focus:ring-custom-yellow sm:text-sm">
+            </div>
+            
+            <!-- 大学名 -->
+            <div>
+                <label for="universityName" class="block text-sm font-medium text-gray-700">大学・専門学校名<span class="text-red-500">*</span></label>
+                <input type="text" name="universityName" id="universityName" required placeholder="〇〇大学" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-custom-yellow focus:ring-custom-yellow sm:text-sm">
+            </div>
+            
+            <!-- 卒業予定年 -->
+            <div>
+                <label for="graduationYear" class="block text-sm font-medium text-gray-700">卒業予定年<span class="text-red-500">*</span></label>
+                <select id="graduationYear" name="graduationYear" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-custom-yellow focus:ring-custom-yellow sm:text-sm">
+                    <option value="">選択してください</option>
+                    <option value="2026">2026年卒業予定</option>
+                    <option value="2027">2027年卒業予定</option>
+                    <option value="2028">2028年卒業予定</option>
+                    <option value="2029">2029年卒業予定</option>
+                    <option value="other">その他</option>
+                </select>
+            </div>
+            
+            <!-- メールアドレス -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Eメールアドレス<span class="text-red-500">*</span></label>
+                <input type="email" name="email" id="email" required placeholder="student@example.com" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-custom-yellow focus:ring-custom-yellow sm:text-sm">
+            </div>
+            
+            <!-- 電話番号 -->
+            <div>
+                <label for="phoneNumber" class="block text-sm font-medium text-gray-700">電話番号<span class="text-red-500">*</span></label>
+                <input type="tel" name="phoneNumber" id="phoneNumber" required placeholder="090-1234-5678" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-custom-yellow focus:ring-custom-yellow sm:text-sm">
+            </div>
+
+            <!-- 紹介コード (任意) -->
+            <div>
+                <label for="referralCode" class="block text-sm font-medium text-gray-700">紹介コード (任意)</label>
+                <input type="text" name="referralCode" id="referralCode" placeholder="友達から送られたコード" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-custom-yellow focus:ring-custom-yellow sm:text-sm">
+            </div>
+
+            <!-- プライバシーポリシー -->
+            <p class="text-sm text-gray-600">ご入力いただいた情報は、登録とサービス提供のためにのみ利用いたします。個人情報の取り扱については、<a href="#" onclick="openPolicyModal(); return false;" class="text-custom-green underline font-semibold">プライバシーポリシー</a>をご確認ください。</p>
+            
+            <div id="policyModal" style="display:none; position:fixed; top:10%; left:10%; right:10%; bottom:10%; width:80%; height:80%; background:white; border-radius:0.75rem; box-shadow:0 0 15px rgba(0,0,0,0.3); z-index:9999;">
+                <div style="text-align:right; padding:10px;">
+                    <button onclick="closePolicyModal()" class="text-sm text-white bg-gray-600 hover:bg-gray-700 px-3 py-1 rounded-lg">閉じる</button>
+                </div>
+                <iframe id="policyFrame" src="https://rookyworks.jp/privacy-policy/" style="width:100%; height:90%; border:none;" class="rounded-b-lg"></iframe>
+            </div>
+
+            <div class="flex items-center mb-4 mt-4">
+                <input type="checkbox" id="agreeCheckbox" class="h-4 w-4 text-custom-green focus:ring-custom-green border-gray-300 rounded">
+                <label for="agreeCheckbox" class="ml-2 block text-sm text-gray-900">上記に同意します <span class="text-red-500">*</span></label>
+            </div>
+            
+            <!-- 送信ボタン (黄色) -->
+            <div class="flex justify-center">
+                <button type="submit" id="submitForm"
+                    class="w-auto bg-custom-yellow text-custom-navy font-bold py-3 px-6 rounded-lg transition-opacity duration-300 ease-in-out shadow-none hover:opacity-90 disabled:opacity-50">
+                    上記に同意して無料で登録する
+                </button>
+            </div>
+            
+        
+        </form>
+    </section>
+
+    <footer class="w-full max-w-4xl mx-auto px-4 mt-4 text-center">
+         <div class="text-sm text-gray-500">
+             <a href="https://rookyworks.jp/user-agreement/" class="hover:text-black transition mx-2">利用規約</a> |
+             <a href="https://rookyworks.jp/privacy-policy/" class="hover:text-black transition mx-2">プライバシーポリシー</a>
+         </div>
+         <small class="block mt-4 text-gray-400"><a href="https://rookyworks.jp/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition mx-2"> &copy; 2025 RookyWorks, Inc.</a></small>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Google Apps Script URL (要設定) ---
+            // ★★★重要★★★: データを送信するGoogle Apps ScriptのURLに置き換えてください
+            const SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec";
+
+            const form = document.getElementById('registrationForm');
+            const submitButton = document.getElementById('submitForm');
+
+            // --- カスタムアラート機能 ---
+            function showAlert(message) {
+                document.getElementById('customAlertMessage').textContent = message;
+                document.getElementById('customAlert').classList.remove('hidden');
+                document.getElementById('customAlertOverlay').classList.remove('hidden');
+            }
+            document.getElementById('customAlertClose').addEventListener('click', function() {
+                document.getElementById('customAlert').classList.add('hidden');
+                document.getElementById('customAlertOverlay').classList.add('hidden');
+            });
+
+            // --- フォーム送信処理 ---
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // 1. バリデーション
+                if (!form.checkValidity()) {
+                    showAlert('必須項目をすべて入力してください。');
+                    return;
+                }
+                if (!document.getElementById('agreeCheckbox').checked) {
+                    showAlert('プライバシーポリシーに同意してください。');
+                    return;
+                }
+
+                // 2. ボタンを無効化
+                submitButton.disabled = true;
+                submitButton.textContent = '送信中...';
+
+                // 3. フォームデータを収集
+                const formData = new FormData(form);
+                const dataObject = {};
+                formData.forEach((value, key) => { dataObject[key] = value; });
+
+                // 4. Google Apps Scriptへ送信するペイロードを作成
+                const payload = {
+                    landingPageID: "Gakuchika_Referral_Reg", // 識別ID
+                    fullName: dataObject.fullName,
+                    furigana: dataObject.furigana,
+                    companyName: dataObject.universityName, // Google Sheetの'companyName'列に大学名をマッピング
+                    graduationYear: dataObject.graduationYear,
+                    email: dataObject.email,
+                    phoneNumber: dataObject.phoneNumber,
+                    referralCode: dataObject.referralCode || "", // 任意
+                    secret: '8qZ$p#vT2@nK*wG7hB5!sF8aU', // 他のLPと共通のシークレットキー
+                    
+                    // GASの列構造に合わせるための空フィールド
+                    inquiryType: "学生登録",
+                    departmentName: "",
+                    detailType: "",
+                    message: ""
+                };
+                
+                // 5. Fetch APIでGASに送信
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // 'no-cors'モードで送信
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
+                    // 成功時: サンキューページにリダイレクト
+                    // 送信が成功したとみなし、サンキューページに移動します。
+                    // 'no-cors'モードではレスポンス内容を読めないため、即時リダイレクトします。
+                    window.top.location.href = 'campaign-thankyou.html'; // サンキューページ名を指定
+                })
+                .catch(error => {
+                    // ネットワークエラーなど
+                    console.error('Error:', error);
+                    onFailure(error);
+                });
+            });
+
+            function onFailure(error) {
+                console.error('Submission failed:', error);
+                showAlert('送信に失敗しました。時間をおいて再度お試しください。');
+                submitButton.disabled = false;
+                submitButton.textContent = '上記に同意して無料で登録する';
+            }
+        });
+
+        // --- プライバシーポリシーモーダル ---
+        function openPolicyModal() {
+            document.getElementById('policyModal').style.display = 'block';
+        }
+        function closePolicyModal() {
+            document.getElementById('policyModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
