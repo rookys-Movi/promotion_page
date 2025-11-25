@@ -11,9 +11,18 @@
 
 /* 1. Global Font and Base Styling */
 body {
-    font-family: 'Corporate-Logo ver2', 'Noto Sans JP', sans-serif;
+    font-family: 'Corporate-Logo ver2', sans-serif !important;
     color: #1f2937; /* text-gray-900 */
     overflow-x: hidden; /* Prevent horizontal scroll from AOS animations */
+}
+
+/* Ensure font is applied to all text elements in every section */
+header, nav, main, section, footer,
+h1, h2, h3, h4, h5, h6,
+p, span, div, a, li, ul, ol,
+button, input, textarea, label,
+strong, em, b, i {
+    font-family: 'Corporate-Logo ver2', sans-serif !important;
 }
 
 :root {
