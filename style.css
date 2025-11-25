@@ -19,7 +19,6 @@ body {
 :root {
     /* Brand Colors */
     --color-green-600: #00a29a;
-    --color-green-700: #00a29a;
     --color-yellow-400:  #f5dc3d;
     --color-yellow-500:  #f5dc3d;
     --color-red-600: #dc2626;
@@ -33,7 +32,6 @@ body {
 
 /* 1.2 Background Utility Classes */
 .bg-brand-green { background-color: var(--color-green-600); }
-.bg-brand-green-dark { background-color: var(--color-green-700); }
 .bg-brand-yellow { background-color: var(--color-yellow-400); }
 .bg-brand-yellow-dark { background-color: var(--color-yellow-500); }
 .bg-brand-white { background-color: var(--color-white); }
@@ -42,9 +40,16 @@ body {
 /* Text Utility */
 .text-custom-red { color: var(--color-red-600) !important; }
 
-/* 1.3 Map Tailwind background utilities to variables for global control */
+/* 1.3 Map Tailwind utilities to variables for global control - All green colors use #00a29a */
+.bg-green-500 { background-color: var(--color-green-600) !important; }
 .bg-green-600 { background-color: var(--color-green-600) !important; }
-.bg-green-700 { background-color: var(--color-green-700) !important; }
+.bg-green-700 { background-color: var(--color-green-600) !important; }
+.text-green-500 { color: var(--color-green-600) !important; }
+.text-green-600 { color: var(--color-green-600) !important; }
+.text-green-700 { color: var(--color-green-600) !important; }
+.border-green-500 { border-color: var(--color-green-600) !important; }
+.border-green-600 { border-color: var(--color-green-600) !important; }
+.border-green-700 { border-color: var(--color-green-600) !important; }
 .bg-yellow-400 { background-color: var(--color-yellow-400) !important; }
 .bg-yellow-500 { background-color: var(--color-yellow-500) !important; }
 
